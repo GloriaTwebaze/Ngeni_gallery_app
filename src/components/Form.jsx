@@ -30,14 +30,14 @@ export const Form = () => {
       newPost.img = fileName;
       console.log(newPost);
       try {
-        await axios.post("http://192.168.83.2:5000/api/upload", data, {
+        await axios.post("http://localhost:5000/api/upload", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
 
         const res = await axios.post(
-          "http://192.168.83.2:5000/api/posts",
+          "http://localhost:5000/api/posts",
           newPost
         );
         console.log(res.data);
